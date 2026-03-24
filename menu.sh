@@ -34,6 +34,7 @@ case $OpcionElegida in
         mkdir -p ~/EPNro1/{entrada,salida,procesado}
         cp consolidar.sh ~/EPNro1/ 2>/dev/null
         chmod +x ~/EPNro1/consolidar.sh 2>/dev/null
+        echo "Se han creado los directorios de forma satisfactoria."
         ;;
     2) if [ -d "$HOME/EPNro1/salida" ]; then
           if [ -z "$FILENAME" ]; then
@@ -44,6 +45,7 @@ case $OpcionElegida in
           if [ ! -f ~/EPNro1/salida/${FILENAME}.txt ]; then
             touch  ~/EPNro1/salida/${FILENAME}.txt  
           fi
+            echo "Se ejecuta el proceso."
             bash ~/EPNro1/consolidar.sh &
       else
           echo "No existe el entorno o está incompleto"
