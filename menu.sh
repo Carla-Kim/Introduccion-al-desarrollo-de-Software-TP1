@@ -35,11 +35,9 @@ case $OpcionElegida in
         cp consolidar.sh ~/EPNro1/ 2>/dev/null
         chmod +x ~/EPNro1/consolidar.sh 2>/dev/null
         ;;
-    2) 
-      if [ -d "$HOME/EPNro1/salida" ]; then
+    2) if [ -d "$HOME/EPNro1/salida" ]; then
           if [ -z "$FILENAME" ]; then
-            echo "Ingresar nombre del archivo donde se adjuntara  
-            la información:"
+            echo "Ingresar nombre del archivo donde se adjuntara la información:"
             read FILENAME 
             export FILENAME
           fi
@@ -48,10 +46,10 @@ case $OpcionElegida in
           fi
             bash ~/EPNro1/consolidar.sh &
       else
-        echo "No existe el entorno o está incompleto"
-      fi;;     
+          echo "No existe el entorno o está incompleto"
+       fi;;     
     3) if [ -d "$HOME/EPNro1/salida" ]; then
-         if [ -f ~/EPNro1/salida/${FILENAME} ]; then
+         if [ -f ~/EPNro1/salida/${FILENAME}.txt ]; then
             sort -n ~/EPNro1/salida/${FILENAME}.txt
             #Usamos -n para ordenar numericamente, dado que el padrón es el primer número que aparece en cada línea del archivo.
          else
@@ -65,14 +63,14 @@ case $OpcionElegida in
     4) if [ -d "$HOME/EPNro1/salida" ]; then
           if [ -f ~/EPNro1/salida/${FILENAME}.txt ]; then
             sort -k5 -n -r ~/EPNro1/salida/${FILENAME}.txt | head -n 10
-          #Usamos -k5 para ordenar por la quinta columna, que es donde se encuentra la nota. -n para ordenar numéricamente y -r para ordenar de mayor a menor.
+           #Usamos -k5 para ordenar por la quinta columna, que es donde se encuentra la nota. -n para ordenar numéricamente y -r para ordenar de mayor a menor.
           else
             echo "El archivo FILENAME.txt no existe en la carpeta de salida."
           fi
       else
-       echo "No existe el entorno o está incompleto"
-      fi;;
-    5)if [ -d "$HOME/EPNro1/salida" ]; then
+          echo "No existe el entorno o está incompleto"
+       fi;;
+    5) if [ -d "$HOME/EPNro1/salida" ]; then
          if [ -f ~/EPNro1/salida/${FILENAME}.txt ]; then
              echo "Ingrese número de padrón:"  
              read padron
@@ -84,9 +82,9 @@ case $OpcionElegida in
           else
             echo "El archivo FILENAME.txt no existe en la carpeta de salida."
           fi
-      else
-       echo "No existe el entorno o está incompleto"
-      fi;;
+       else
+          echo "No existe el entorno o está incompleto"
+       fi;;
     6) 
        echo "Salida exitosa"
        exit 0
