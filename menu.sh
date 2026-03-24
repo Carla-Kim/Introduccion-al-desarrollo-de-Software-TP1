@@ -64,7 +64,7 @@ case $OpcionElegida in
 
     4) if [ -d "$HOME/EPNro1/salida" ]; then
           if [ -f ~/EPNro1/salida/${FILENAME}.txt ]; then
-            sort -k5 -n -r ~/EPNro1/salida/${FILENAME}.txt | head -n 10
+            sort -k5 -g -r ~/EPNro1/salida/${FILENAME}.txt | head -n 10
            #Usamos -k5 para ordenar por la quinta columna, que es donde se encuentra la nota. -n para ordenar numéricamente y -r para ordenar de mayor a menor.
           else
             echo "El archivo FILENAME.txt no existe en la carpeta de salida."
