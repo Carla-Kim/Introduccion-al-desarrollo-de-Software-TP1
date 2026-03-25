@@ -14,7 +14,7 @@ if [ "$1" == "-d" ]; then
     exit 0
 fi
 
-while true
+until [ "$OpcionElegida" = "6" ]
 do
   echo "Elija una opción:"
   echo "1: Crear entorno."
