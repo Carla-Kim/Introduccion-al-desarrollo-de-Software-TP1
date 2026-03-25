@@ -13,7 +13,7 @@ if [ "$1" == "-d" ]; then
     rm -rf ~/EPNro1
     exit 0
 fi
-
+OpcionElegida=""
 until [ "$OpcionElegida" = "6" ]
 do
   echo "Elija una opción:"
