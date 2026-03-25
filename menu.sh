@@ -45,13 +45,15 @@ case $OpcionElegida in
           if [ ! -f ~/EPNro1/salida/${FILENAME}.txt ]; then
             touch  ~/EPNro1/salida/${FILENAME}.txt  
           fi
-            echo "Se ejecuta el proceso."
+            pkill -f consolidar.sh
+            echo "Proceso en curso para $FILENAME.txt."
             bash ~/EPNro1/consolidar.sh &
       else
           echo "No existe el entorno o está incompleto"
        fi;;     
     3) if [ -d "$HOME/EPNro1/salida" ]; then
          if [ -f ~/EPNro1/salida/${FILENAME}.txt ]; then
+            echo "Alumnos ordenados por padrón:"
             sort -n ~/EPNro1/salida/${FILENAME}.txt
             #Usamos -n para ordenar numericamente, dado que el padrón es el primer número que aparece en cada línea del archivo.
          else
@@ -64,6 +66,7 @@ case $OpcionElegida in
 
     4) if [ -d "$HOME/EPNro1/salida" ]; then
           if [ -f ~/EPNro1/salida/${FILENAME}.txt ]; then
+            echo "Las 10 notas más altas del listado:"
             sort -k5 -g -r ~/EPNro1/salida/${FILENAME}.txt | head -n 10
            #Usamos -k5 para ordenar por la quinta columna, que es donde se encuentra la nota. -n para ordenar numéricamente y -r para ordenar de mayor a menor.
           else
@@ -77,6 +80,7 @@ case $OpcionElegida in
              echo "Ingrese número de padrón:"  
              read padron
            if grep -q "^$padron " ~/EPNro1/salida/${FILENAME}.txt; then
+               echo "Datos del padrón $padron:"
                 grep "^$padron " ~/EPNro1/salida/${FILENAME}.txt
              else
                 echo "No se encontró ningún alumno con el número de padrón $padron."
