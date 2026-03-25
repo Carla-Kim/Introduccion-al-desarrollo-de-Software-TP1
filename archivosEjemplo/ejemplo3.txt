@@ -1,0 +1,5 @@
+130567 Andres Molina amolina@fi.uba.ar 4
+76543 Valentina Rios vrios@fi.uba.ar 10
+112233 Nicolas Suarez nsuarez@fi.uba.ar 6
+99887 Camila Torres ctorres@fi.uba.ar 8
+55443 Bruno Acosta bacosta@fi.uba.ar 7

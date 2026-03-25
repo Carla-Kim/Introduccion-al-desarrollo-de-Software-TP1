@@ -1,0 +1,5 @@
+110234 Maria Gomez mgomez@fi.uba.ar 6
+99821 Diego Ruiz druiz@fi.uba.ar 8
+120045 Sofia Perez sperez@fi.uba.ar 7
+88776 Tomas Ibarra tibarra@fi.uba.ar 9
+102938 Laura Castro lcastro@fi.uba.ar 5
