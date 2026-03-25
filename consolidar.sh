@@ -8,4 +8,3 @@ while true; do
     done
     sleep 3
 done
-echo "Proceso completado"
